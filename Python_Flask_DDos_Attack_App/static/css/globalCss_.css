@@ -1,0 +1,147 @@
+body{
+    background-color:#fafafa;
+}
+.container-fluid {
+    margin:0;
+    padding:0;
+}
+.top_Bx{
+    background-color:lightgrey;
+    position: fixed;
+    height:61px;
+    width:100%;
+    top:0;
+}
+.t_pNav{
+    height:61px;
+}
+.project_Name{
+    color:black;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 15px 0 0;
+    margin-top: 75px;
+    border: 1px solid black;
+}
+nav.navbar{
+    height: 61px;
+    padding: 0;
+}
+ul.menu_{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+ul.menu_ li{
+    float: left;
+}
+ul.menu_ li a{
+    display: block;
+    color:black;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 15px 10px;
+    margin: 0 7px;
+    text-align: center;
+}
+.content{
+    margin-top: 150px;
+}
+form{
+    background-color:white;
+    border: 1px solid lightgray;
+    padding: 25px;
+    max-width:350px;
+    height: 500px;
+    margin: auto;
+    text-align: center;
+    border: 2px solid lightgray;
+}
+.content form h3{
+    font-size: 26px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    padding: 12px;
+    margin-top: 5px;
+    line-height: 45px;
+}
+input[type=text],input[type=password]{ 
+    font-size: 13px;
+    font-weight: 500;
+    width:100%;
+    padding: 9px;
+    margin: 6px 0;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    outline: none;
+    background-color: #fafafa;
+} 
+button[type="submit"]{
+    width:100%;
+    padding: 6px;
+    margin: 15px 0 0;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    border: none;
+}
+a.icon{
+    display:none;
+    color:black;
+    font-size: 19px;
+    padding: 12px 15px;
+    text-decoration: none;
+}
+@media screen and (max-width:768px){
+    .menu_{
+        display: none;
+    }
+    a.icon{
+        display:block;
+        position: absolute;
+        right: 0;
+        top:0;
+    }
+}
+@media screen and (max-width:768px){
+    nav.navbar{
+        height: 220px;
+        position: relative;
+        justify-content:left !important;
+    }
+    .menu_.show{
+        display: block;
+        text-align:left;
+        float: none;
+        width:100%;
+        background-color: #333;
+        box-shadow: 0px 2px 3px 0px lightgrey;
+    }
+    ul.menu_ li a{
+        color: white;
+    }
+    .menu_.show li{
+        display: block;
+        text-align:left;
+        float: none;
+    }
+    .menu_.show li a:hover{
+        border-bottom: 2px solid lightblue;
+    }
+    .menu_.show li a:hover{
+        padding-left: 20px;
+        transition-duration: 0.4s;
+    }
+}
+.container .footer_info{
+    margin-top: 35px;
+    text-align: center;
+}
+.container .footer_info p{
+    color: white;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+

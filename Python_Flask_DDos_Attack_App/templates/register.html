@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{{url_for('static', filename='js/nav.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/globalCss_.css')}}"> 
+</head>
+<body class="bg-dark">
+    
+    <div class="container-fluid">
+        <div class="top_Bx">
+            <div class="container-fluid  top">
+                <div class="t_pNav" style="width: 100%;">
+                    <h3 style="padding: 10px 8px;float:left">Crazy DDOS Attack</h3>
+                    <a href="javascript:void(0)" class="icon" onclick="dropdownMenu()"> <span style="font-size: 25px;font-weight:600">x</span></a>
+                    <nav class="navbar fixed-top container-fluid justify-content-end">
+                        <ul class="menu_" id="menu">
+                            <li class="nav-item"><a href="" class="nav-link">Main</a></li>
+                            <li class="nav-item"><a href="" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="" class="nav-link">About</a></li>
+                            {% block liRegister %}
+                                <li class="nav-item"><a href="" class="nav-link">Login</a></li>
+                            {% endblock%}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <div class="container">
+                <div class="loginBox">
+                    <div class="content" style="margin-top: 100px;">
+                                {% block form %}
+                                    <form action="/ddos" method="POST" style="height: 425px;">
+                                {% endblock %}
+                                        {% block h3Desc %}
+                                            <h3>Register to make DDOS Attack</h3>
+                                        {% endblock %}
+                                        {% block getinput %}
+                                            <input type="text" class="form-control form-control-lg" name="p_o_e_O_r_N_mb" id="p_o_e_O_r_N_mb_" placeholder="Mobile Phone Number or Email" maxlength="30">
+                                            <input type="text" class="form-control form-control-lg" name="n_eO_r_Sn_me" id="n_eO_r_Sn_me_" placeholder="Name and Surname" max="30">
+                                            <input type="text" class="form-control form-control-lg" name="u_ernm_e" id="u_ernm_e_" placeholder="Username" max="20">
+                                            <input type="password" class="form-control form-control-lg" name="p_sW0d" id="p_sW0d_" placeholder="Password" max="12"> <br>
+                                        {% endblock %}
+                                        {% block buttonSubmit %}
+                                            <button type="submit" class="btn btn-primary btn-xl"> Register </button>
+                                        {% endblock %}
+                                </form>
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="footer_info">
+                    <p>We are not responsible for any adverse situations that may occur !!!</p>
+                </div>
+            </div>
+        </footer>
+
+
+    </div>
+</body>
+</html>
+
+

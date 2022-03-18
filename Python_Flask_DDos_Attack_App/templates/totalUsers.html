@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Users</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        th{
+            text-align:center;
+        }
+        div.content{
+            height: 350px;
+            overflow-y: auto;
+            overflow-x: auto;
+            border: 1px solid rgb(228, 218, 218);
+        }
+        h2{
+            margin: 20px 0 !important;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <h2>Registered With Phone Number</h2>
+        <div class="alert alert-warning">
+            Refresh the page after 
+        </div>
+        <div class="container p-2" style="text-align: center;">
+            <small style="color: red;">*After pressing the delete button, you will go to another page, 
+                but the deletion process will be completed. Just come back and refresh 
+                the page.</small>
+        </div>
+        <div class="content">
+            <div class="table-box">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Number</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for userList in users1 %}
+                            <form action="/delete/users1" method="post">
+                                <tr>
+                                    <td style="text-align: center;">{{userList[0]}}</td><td>{{userList[1]}}</td><td>{{userList[2]}}</td>
+                                    <td>{{userList[3]}}</td><td>{{userList[4]}}</td><td>{{userList[5]}}</td>
+                                    <td style="width: 100%;" class="d-flex justify-content-between">
+                                        <input type="text" class="form-control" name="id" style="width: 40% !important;text-align: center;" placeholder="ID">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                            </form>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <br>
+
+        <h2>Registered With Gmail</h2>
+        <div class="content">
+            <div class="alert alert-warning">
+                Refresh the page after deletion
+            </div>
+            <div class="container p-2" style="text-align: center;">
+                <small style="color: red;">*After pressing the delete button, you will go to another page, 
+                    but the deletion process will be completed. Just come back and refresh 
+                    the page.</small>
+            </div>
+            <div class="table-box">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Gmail</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for userList2 in users2 %}
+                            <form action="/delete/users2" method="post">
+                                <tr>
+                                    <td style="text-align: center;">{{userList2[0]}}</td><td>{{userList2[1]}}</td><td>{{userList2[2]}}</td>
+                                    <td>{{userList2[3]}}</td><td>{{userList2[4]}}</td><td>{{userList2[5]}}</td>
+                                    <td style="width: 100%;" class="d-flex justify-content-between">
+                                        <input type="text" class="form-control" name="id" style="width: 40% !important;text-align: center;" placeholder="ID">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                            </form>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDOS ATTACK</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{{url_for('static', filename='js/nav.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/globalCss_.css')}}"> 
+</head>
+<body style="background-color: red;">
+    
+    {% extends 'register.html' %}
+
+    {% block liRegister %}
+        <li class="nav-item"><a href="" class="nav-link">Register</a></li>
+    {% endblock%}
+
+        {% block form %}
+            <form action="/attack" method="POST" style="height:520px;max-width:450px">
+        {% endblock %}
+            {% block h3Desc %}
+                <h4 style="margin-top: 15px;">Enter the Information Requested for DDOS Attack</h4> <br>
+            {% endblock %}
+            {% block getinput %}
+                <input type="text" class="form-control form-control-lg" name="i_p0_r_D0_inNme" id="iporDomain" placeholder="Ip Address or Domain Name">
+                <input type="text" class="form-control form-control-lg" name="s_0r_c3_P0r_ct" id="srcPort" placeholder="Source Port" max="65536">
+                <input type="text" class="form-control form-control-lg" name="d3_st_P0r_ct" id="destPort" placeholder="Destination Port" maxlength="65536">
+                <input type="text" class="form-control form-control-lg" name="a_tA_c_V4lE" id="attackNumbers" placeholder="Enter the number of instant attacks (between 1 - 40000)" maxlength="40000" minlength="1">
+                <input type="text" class="form-control form-control-lg" name="atA_C_S1z3" id="instantAttacks" placeholder="Enter the size of instant attacks">
+            {% endblock %}
+            {% block buttonSubmit %}
+                <button type="submit" class="btn btn-primary"> Attack </button>
+            </form>
+            
+                <form action="/stop" method="POST" style="height:200px;max-width:450px">
+                    Would You Like To Stop The DDOS Attack ? (E / N) <input type="text" class="form-control form-control-lg" name="attack" maxlength="1">
+                    <button type="submit" style="background-color: red;" class="btn btn-primary btn-xl">Stop DDOS Attack</button>
+                </form>
+            {% endblock %}
+
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users - 1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        th{
+            text-align:center;
+        }
+        td{
+            text-align: center;
+        }
+        h2{
+            margin: 20px 0 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <h2>Registered With Phone Number</h2>
+        <div class="alert alert-warning">
+            Refresh the page after deletion
+        </div>
+        <div class="content">
+            <div class="table-box">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</td>
+                            <th>Number</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for userList in users %}
+                            <form action="/delete/users1" method="post">
+                                <tr>
+                                    <td style="text-align: center;">{{userList[0]}}</td><td>{{userList[1]}}</td><td>{{userList[2]}}</td>
+                                    <td>{{userList[3]}}</td><td>{{userList[4]}}</td><td>{{userList[5]}}</td>
+                                    <td style="width: 100%;" class="d-flex justify-content-between">
+                                        <input type="text" class="form-control" name="id" style="width: 40% !important;text-align: center;" placeholder="ID">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                            </form>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        const req = new XMLHttpRequest();
+        req.open('')
+        req.onload = () => {
+
+        }
+        req.send(new FormData());
+    </script>
+</body>
+</html>
+
+

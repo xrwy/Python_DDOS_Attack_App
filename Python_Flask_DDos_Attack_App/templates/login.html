@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    {% extends 'register.html' %}
+
+    
+        {% block form %}
+            <form action="/personcontrol" method="POST">
+            {% endblock %}
+            {% block h3Desc %}
+                <h3>Login for DDOS Attack</h3>
+            {% endblock %}
+            {% block getinput %}
+                <input type="text" class="form-control form-control-lg" name="p_o_e_O_r_N_mb" id="p_o_e_O_r_N_mb_" placeholder="Mobile Phone Number or Email" maxlength="30">
+                <input type="text" class="form-control form-control-lg" name="n_eO_r_Sn_me" id="n_eO_r_Sn_me_" placeholder="Name and Surname" max="30">
+                <input type="text" class="form-control form-control-lg" name="u_ernm_e" id="u_ernm_e_" placeholder="Username" max="20">
+                <input type="password" class="form-control form-control-lg" name="p_sW0d" id="p_sW0d_" placeholder="Password" max="12"> <br>
+            {% endblock %}
+
+            {% block buttonSubmit %}
+                <button type="submit" class="btn btn-primary btn-xl">Login</button>
+            {% endblock %}
+        </form>
+
+</body> 
+
+</html>  
