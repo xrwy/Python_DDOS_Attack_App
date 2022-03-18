@@ -253,7 +253,7 @@ def stop_():
         if(stopy == ''):
             return 'Please pay attention to the range of numbers you enter.'
         else:
-            if(stopy == 'E'):
+            if(stopy.lower() == 'y'):
                 ddosAttack(stopy,target_='',srcPort=1,dstPort=1,attack_Num=1,attackSize_=1)
                 return render_template('ddosAttackStop.html')
             else:
